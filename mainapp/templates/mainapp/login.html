@@ -1,20 +1,7 @@
-<!doctype html>
-<html lang="ru">
+{% extends 'mainapp/base.html' %}
+{% block content %}
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- ChartJS -->
-    <link rel="stylesheet" href="/css/Chart.min.css">
-
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="/css/fontawesome.all.min.css">
-
     <title>Welcome to GeekLab!</title>
 </head>
 
@@ -57,26 +44,21 @@
 </div>
 
 
-
-
-
-
-
-
     <!-- JavaScript section -->
     <!-- Bootstrap -->
-    <script src="/js/jquery-3.6.0.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 
     <!-- ChartJs -->
-    <script src="/js/Chart.min.js"></script>
+    <script src="/static/js/Chart.min.js"></script>
 
     <!-- FontAwesome -->
-    <script src="/js/fontawesome.all.min.js"></script>
+    <script src="/static/js/fontawesome.all.min.js"></script>
 
 
 
 </body>
 
 </html>
+{% endblock %}
