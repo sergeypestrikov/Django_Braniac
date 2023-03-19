@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from mainapp.models import News
 
 
 class IndexView(TemplateView):
@@ -69,31 +70,5 @@ class NewsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        context_data['object_list'] = [
-            {
-                'title': 'IT растет',
-                'preview': 'Спрос на специалистов увеличился',
-                'date': datetime.now()
-            }, {
-                'title': 'Учиться никогда не поздно',
-                'preview': 'Самое время сменить профессию',
-                'date': datetime.now()
-            }, {
-                'title': 'Чего ждать на собеседовании',
-                'preview': '30 каверзных вопросов для соискателя',
-                'date': datetime.now()
-            }, {
-                'title': 'Люблю свою работу',
-                'preview': 'Как полюбить то, что делаешь',
-                'date': datetime.now()
-            }, {
-                'title': 'Год без софта',
-                'preview': 'Кто нас покинул и что делать дальше',
-                'date': datetime.now()
-            }, {
-                'title': 'Python или Java',
-                'preview': 'Приоритетные языки программирования 2023 года',
-                'date': datetime.now()
-            }
-        ]
+        context_data['object_list'] = News.objects.all()
         return context_data
