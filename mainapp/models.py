@@ -1,5 +1,7 @@
 from django.db import models
 
+from config import settings
+
 NULLABLE = {'blank': True, 'null': True}
 
 
@@ -81,3 +83,27 @@ class CoursesTeacher(BaseModel):
 
     def __str__(self) -> str:
         return "{0:0>3} {1} {2}".format(self.pk, self.name, self.surname)
+
+
+# Форма отзывов
+class CourseFeedback(BaseModel):
+
+    RATINGS = (
+        (5, '⭐⭐⭐⭐⭐'),
+        (4, '⭐⭐⭐⭐'),
+        (3, '⭐⭐⭐'),
+        (2, '⭐⭐'),
+        (1, '⭐'),
+    )
+
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='курс')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='пользователь')
+    rating = models.SmallIntegerField(choices=RATINGS, default=5, verbose_name='рейтинг')
+    feedback = models.TextField(verbose_name='отзыв', default='написать отзыв')
+
+    class Meta:
+        verbose_name = ''
+        verbose_name_plural = ''
+
+    def __str__(self):
+        return f'Отзыв на {self.course} от {self.user}'

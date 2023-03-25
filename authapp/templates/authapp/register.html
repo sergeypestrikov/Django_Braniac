@@ -3,49 +3,50 @@
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <p>
-        <input type="text" name="username" autofocus=""
-               autocapitalize="none" autocomplete="username"
-               maxlength="150" class="textinput textInput form-control"
-               required="" id="id_username" placeholder="имя пользователя">
-    </p>
-    <p>
-        <input type="text" name="email" autofocus=""
-               autocapitalize="none" autocomplete="email"
-               maxlength="150" class="textinput textInput form-control"
-               required="" id="id_email" placeholder="электронная почта">
-    </p>
-    <p>
-        <input type="password" name="password1"
-               autocomplete="current-password"
-               class="textinput textInput form-control" required=""
-               id="id_password1" placeholder="пароль">
-    </p>
-    <p>
-        <input type="password" name="password2"
-               autocomplete="current-password"
-               class="textinput textInput form-control" required=""
-               id="id_password2" placeholder="повторить пароль">
-    </p>
-     <p>
-        <input type="text" name="name" autocapitalize="none"
-               maxlength="150" class="textinput textInput form-control"
-               required="" placeholder="Ваше имя">
-    </p>
-     <p>
-        <input type="text" name="surname" autocapitalize="none"
-               maxlength="150" class="textinput textInput form-control"
-               required="" placeholder="Ваша фамилия">
-    </p>
-     <p>
-        <input type="number" name="age" autocapitalize="none"
-                class="textinput textInput form-control"
-               required="" placeholder="возраст">
-    </p>
-     <p>
-        <input type="file" name="avatar" class="textinput textInput form-control"
-               required="" placeholder="аватар">
-    </p>
+    {{ form.as_p }}
+<!--    <p>-->
+<!--        <input type="text" name="username" autofocus=""-->
+<!--               autocapitalize="none" autocomplete="username"-->
+<!--               maxlength="150" class="textinput textInput form-control"-->
+<!--               required="" id="id_username" placeholder="имя пользователя">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="text" name="email" autofocus=""-->
+<!--               autocapitalize="none" autocomplete="email"-->
+<!--               maxlength="150" class="textinput textInput form-control"-->
+<!--               required="" id="id_email" placeholder="электронная почта">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="password" name="password1"-->
+<!--               autocomplete="current-password"-->
+<!--               class="textinput textInput form-control" required=""-->
+<!--               id="id_password1" placeholder="пароль">-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <input type="password" name="password2"-->
+<!--               autocomplete="current-password"-->
+<!--               class="textinput textInput form-control" required=""-->
+<!--               id="id_password2" placeholder="повторить пароль">-->
+<!--    </p>-->
+<!--     <p>-->
+<!--        <input type="text" name="name" autocapitalize="none"-->
+<!--               maxlength="150" class="textinput textInput form-control"-->
+<!--               required="" placeholder="Ваше имя">-->
+<!--    </p>-->
+<!--     <p>-->
+<!--        <input type="text" name="surname" autocapitalize="none"-->
+<!--               maxlength="150" class="textinput textInput form-control"-->
+<!--               required="" placeholder="Ваша фамилия">-->
+<!--    </p>-->
+<!--     <p>-->
+<!--        <input type="number" name="age" autocapitalize="none"-->
+<!--                class="textinput textInput form-control"-->
+<!--               required="" placeholder="возраст">-->
+<!--    </p>-->
+<!--     <p>-->
+<!--        <input type="file" name="avatar" class="textinput textInput form-control"-->
+<!--               required="" placeholder="аватар">-->
+<!--    </p>-->
     <p>
         <button type="submit" class="btn btn-primary btn-block">
             Зарегистрироваться
