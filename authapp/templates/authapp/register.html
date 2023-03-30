@@ -1,9 +1,10 @@
 {% extends 'authapp/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
 <!--    <p>-->
 <!--        <input type="text" name="username" autofocus=""-->
 <!--               autocapitalize="none" autocomplete="username"-->
