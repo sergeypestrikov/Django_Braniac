@@ -37,5 +37,20 @@
                     </li>
 
                 </ul>
-                <span><a href="#">🇷🇺</a> <i class="fas fa-grip-lines-vertical"></i> <a href="#">🇬🇧</a></span>
+<!--                <span><a href="#">🇷🇺</a> <i class="fas fa-grip-lines-vertical"></i> <a href="#">🇬🇧</a></span>-->
+                <div class="row">
+                    <div class="col p-0 border-right">
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input name="language" value="ru" type="hidden">
+                            <button class="btn btn-link" type="submit">🇷🇺</button>
+                        </form>
+                    </div>
+                    <div class="col p-0 border-left">
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input name="language" value="en" type="hidden">
+                            <button class="btn btn-link" type="submit">🇬🇧</button>
+                        </form>
+                    </div>
             </div>

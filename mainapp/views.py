@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
+from django.core.paginator import Paginator
 from django.http import JsonResponse, FileResponse, HttpResponse, HttpResponseRedirect
 from django.core.cache import cache
 from django.shortcuts import render, get_object_or_404
@@ -92,7 +93,7 @@ class LoginView(TemplateView):
 # Контроллер страницы новостей
 class NewsListView(ListView):
     model = News
-    paginate_by = 5
+    paginate_by = 3
 
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
@@ -163,6 +164,9 @@ class CourseDetailView(TemplateView):
         # Форма обратной связи, если пользователь авторизован
         if self.request.user.is_authenticated:
             context_data['feedback_form'] = CourseFeedbackForm(course=context_data['course_object'], user=self.request.user)
+        # Пагинация для отзывов
+        # paginator = Paginator(context_data['feedback_list'], 2)
+        # paginator.page(4)
         return context_data
 
 
